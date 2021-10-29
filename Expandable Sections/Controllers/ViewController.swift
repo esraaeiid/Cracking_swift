@@ -11,9 +11,9 @@ class ViewController: UITableViewController {
     
     let cellID = "cellID"
     var twoDimensionalArray = [
-        ExpandableNames(isExpanded: false, names: ["Chris", "Jack", "Zack", "Sam", "Carol", "Sarah", "Amy", "Kim"]),
-        ExpandableNames(isExpanded: false, names: ["Cameroon", "Aalaa", "Sia", "Maya", "Nick", "Lee"]),
-        ExpandableNames(isExpanded: false, names: ["Davia", "Dalia", "Dan"])
+        ExpandableNames(isExpanded: false, names: ["Sarah", "Amy", "Kim"]),
+        ExpandableNames(isExpanded: false, names: [ "Aalaa", "Sia"]),
+        ExpandableNames(isExpanded: false, names: ["Davia"])
     ]
 
     override func viewDidLoad() {
@@ -35,6 +35,13 @@ class ViewController: UITableViewController {
         else{
         return twoDimensionalArray[section].names.count
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+        let imageVC = ImageViewController()
+        self.navigationController?.pushViewController(imageVC, animated: true)
+
+      
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
