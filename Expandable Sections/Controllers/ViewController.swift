@@ -13,7 +13,7 @@ class ViewController: UITableViewController {
     let cellID = "cellID"
     
     var person: [Persons] = []
-    
+
     var twoDimensionalArray  = [
         ExpandableNames(isExpanded: false, names: ["Sarah", "Amy", "Kim"]),
         ExpandableNames(isExpanded: false, names: [ "Aalaa", "Sia"]),
@@ -93,4 +93,3 @@ class ViewController: UITableViewController {
     }
 
 }
-

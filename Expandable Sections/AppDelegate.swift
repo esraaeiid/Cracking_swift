@@ -8,13 +8,14 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BackendConfiguring {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        AppDelegateConfigurator().actions.forEach({ $0.execute() })
+//        AppDelegateConfigurator().actions.forEach({ $0.execute() })
+        configureBackend()
         return true
     }
 

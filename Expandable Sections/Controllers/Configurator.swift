@@ -15,3 +15,14 @@ protocol Configurator {
 class AppDelegateConfigurator {
     let actions: [Configurator] = [Notifications()]
 }
+
+
+protocol BackendConfiguring {
+    func configureBackend()
+}
+
+extension BackendConfiguring {
+  func configureBackend() {
+    print("BackendConfiguring")
+  }
+}
