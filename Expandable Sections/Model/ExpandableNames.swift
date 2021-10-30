@@ -7,7 +7,17 @@
 
 import Foundation
 
-struct ExpandableNames {
+protocol Persons { }
+
+class ExpandableNames: Persons {
     var isExpanded: Bool
     let names: [String]
+    
+    init(isExpanded: Bool, names: [String]) {
+         self.isExpanded = isExpanded
+         self.names = names
+     }
 }
+
+
+

@@ -7,10 +7,14 @@
 
 import UIKit
 
+
 class ViewController: UITableViewController {
     
     let cellID = "cellID"
-    var twoDimensionalArray = [
+    
+    var person: [Persons] = []
+    
+    var twoDimensionalArray  = [
         ExpandableNames(isExpanded: false, names: ["Sarah", "Amy", "Kim"]),
         ExpandableNames(isExpanded: false, names: [ "Aalaa", "Sia"]),
         ExpandableNames(isExpanded: false, names: ["Davia"])
