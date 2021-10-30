@@ -1,0 +1,6 @@
+framework module Pods_Expandable_Sections {
+  umbrella header "Pods-Expandable Sections-umbrella.h"
+
+  export *
+  module * { export * }
+}
