@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UITableViewController {
     
+    enum SectionMode : String, CaseIterable {
+        case open = "Open"
+        case close = "Close"
+    }
+    
     let cellID = "cellID"
     
     var person: [Persons] = []
@@ -30,6 +35,14 @@ class ViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return twoDimensionalArray.count
+    }
+    
+    func handleSectionToggle(isExpanded: Bool) -> String {
+        if isExpanded{
+          return  SectionMode.open.rawValue
+        } else  {
+            return  SectionMode.close.rawValue
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,9 +82,13 @@ class ViewController: UITableViewController {
             indexPaths.append(indexPath)
         }
         let isExpanded = twoDimensionalArray[section].isExpanded
+        
+        
         twoDimensionalArray[section].isExpanded = !isExpanded
+        
+    
 
-        button.setTitle(isExpanded ? "Open" : "Close", for: .normal)
+        button.setTitle(handleSectionToggle(isExpanded: isExpanded), for: .normal)
         if isExpanded{
             tableView.deleteRows(at: indexPaths, with: .fade)
         }else{
